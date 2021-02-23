@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rCp-Q2-jYg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V2g-Fh-IMw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -11,7 +11,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="wrF-5J-O9G">
             <objects>
-                <viewController id="uAh-Ou-Npi" customClass="SignUpViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpView" id="uAh-Ou-Npi" customClass="SignUpViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G72-9k-JUf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,9 +29,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSe-0a-yfP">
-                                <rect key="frame" x="100" y="438" width="214" height="61"/>
+                                <rect key="frame" x="100" y="438" width="214" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="sign up"/>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="uAh-Ou-Npi" eventType="touchUpInside" id="joQ-Sq-686"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="29j-Pi-3KX">
                                 <rect key="frame" x="123" y="308" width="169" height="34"/>
@@ -44,6 +47,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="6WV-tn-zDf"/>
+                    <connections>
+                        <outlet property="passwordFirstField" destination="29j-Pi-3KX" id="hc2-2z-lad"/>
+                        <outlet property="passwordSecondField" destination="0xU-eG-qQn" id="c8S-xx-fjS"/>
+                        <outlet property="usernameField" destination="QgC-IK-Zv6" id="Ei2-ce-M2b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlZ-HV-Z1v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,7 +60,7 @@
         <!--Log In View Controller-->
         <scene sceneID="Lk9-Gx-dNt">
             <objects>
-                <viewController id="UbG-QL-9l9" customClass="LogInViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInView" id="UbG-QL-9l9" customClass="LogInViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tob-mx-vxd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,8 +90,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="sign up"/>
                                 <connections>
-                                    <action selector="signUpButtonTapped:" destination="UbG-QL-9l9" eventType="touchUpInside" id="vZn-3t-aUd"/>
-                                    <segue destination="uAh-Ou-Npi" kind="show" id="mU0-1E-jiS"/>
+                                    <segue destination="uAh-Ou-Npi" kind="show" id="E5q-Dr-c8M"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,7 +110,7 @@
         <!--User View Controller-->
         <scene sceneID="Dmc-fe-Gb1">
             <objects>
-                <viewController id="Acc-wh-6NB" customClass="UserViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserView" id="Acc-wh-6NB" customClass="UserViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zUp-Aa-3Jz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,13 +119,19 @@
                                 <rect key="frame" x="93" y="579" width="227" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="My Recipes"/>
+                                <connections>
+                                    <action selector="myRecipesTapped:" destination="Acc-wh-6NB" eventType="touchUpInside" id="JVW-qT-PCR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RN4-U1-iB6">
                                 <rect key="frame" x="94" y="449" width="227" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Other User Recipes"/>
+                                <connections>
+                                    <action selector="otherRecipesTapped:" destination="Acc-wh-6NB" eventType="touchUpInside" id="lZn-fN-NHE"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Eb-f3-Ga4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Eb-f3-Ga4">
                                 <rect key="frame" x="94" y="159" width="226" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -130,6 +143,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="zAp-ug-3ip"/>
+                    <connections>
+                        <outlet property="helloLabel" destination="2Eb-f3-Ga4" id="KKF-Sa-Ztx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wk6-Gs-8HA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,7 +198,7 @@
         <!--Recipes Table View Controller-->
         <scene sceneID="7KE-DB-7QZ">
             <objects>
-                <tableViewController id="gWH-zn-Xn8" customClass="RecipesTableViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MyRecipes" id="gWH-zn-Xn8" customClass="RecipesTableViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rgk-BW-ShJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,7 +263,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecA-sJ-IPl">
-                                <rect key="frame" x="164" y="122" width="42" height="21"/>
+                                <rect key="frame" x="70" y="143" width="245" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -531,24 +547,6 @@
             <point key="canvasLocation" x="3117.3913043478265" y="-607.36607142857144"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="O9J-0k-8kf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aZW-Ip-L7z" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xjM-rL-iMl">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uAh-Ou-Npi" kind="relationship" relationship="rootViewController" id="3Ye-Ae-eNv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gZY-0r-8un" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="479.71014492753625" y="-1310.4910714285713"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="VXu-IN-bgC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qBZ-hf-slR" sceneMemberID="viewController">
@@ -567,9 +565,6 @@
             <point key="canvasLocation" x="1318.840579710145" y="-612.05357142857144"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="mU0-1E-jiS"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>

@@ -10,6 +10,7 @@ import CoreData
 
 class RecipesTableViewController: UITableViewController {
     
+    var userID = Int()
     var recipesList = [Recipe]()
     var context: NSManagedObjectContext?
 
@@ -53,6 +54,7 @@ class RecipesTableViewController: UITableViewController {
             let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: self.context!)
             let recipe = NSManagedObject(entity: entity!, insertInto: self.context)
             recipe.setValue(textFieldForTitle?.text, forKey: "title")
+            recipe.setValue(self.userID, forKey: "userID")
             self.saveData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
@@ -79,7 +81,7 @@ class RecipesTableViewController: UITableViewController {
     }
     func findData(withTitle: String) {
         let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
-        request.predicate = NSPredicate(format: "title CONTAINS %@", argumentArray: ["\(withTitle)"])
+        request.predicate = NSPredicate(format: "title CONTAINS %@ && userID == %@", argumentArray: ["\(withTitle) && \(userID)"])
         do {
             let result = try context?.fetch(request)
             recipesList = result!
@@ -90,6 +92,7 @@ class RecipesTableViewController: UITableViewController {
     }
     func loadData() {
         let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
+        request.predicate = NSPredicate(format: "userID == %@", argumentArray: [userID])
         do {
             let result = try context?.fetch(request)
             recipesList = result!
