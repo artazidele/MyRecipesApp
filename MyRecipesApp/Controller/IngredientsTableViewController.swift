@@ -12,81 +12,95 @@ class IngredientsTableViewController: UITableViewController {
     
     var titleString = String()
     var recipeID = Int()
+    var ingredientsList = [Ingredient]()
     
     var context: NSManagedObjectContext?
 
+    @IBOutlet weak var ingredientTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = titleString
+        ingredientTableView.delegate = self
+        ingredientTableView.dataSource = self
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadData()
     }
-
+    @IBAction func addNewIngredient(_ sender: Any) {
+        addIngredient()
+    }
+    private func addIngredient() {
+        let alertController = UIAlertController(title: "Add New Recipe", message: "Recipe title", preferredStyle: .alert)
+        alertController.addTextField { (textField: UITextField) in
+            textField.placeholder = "Enter the title of new recipe!"
+            textField.autocapitalizationType = .sentences
+            textField.autocorrectionType = .no
+        }
+        alertController.addTextField { (textField: UITextField) in
+            textField.placeholder = "Enter the title of new recipe!"
+            textField.autocapitalizationType = .sentences
+            textField.autocorrectionType = .no
+        }
+        let addAction = UIAlertAction(title: "Add", style: .cancel) { (action: UIAlertAction) in
+            let textFieldForIngredient = alertController.textFields?.first
+            let textFieldForAmount = alertController.textFields?.last
+            let entity = NSEntityDescription.entity(forEntityName: "Ingredient", in: self.context!)
+            let ingredient = NSManagedObject(entity: entity!, insertInto: self.context)
+            ingredient.setValue(textFieldForIngredient?.text, forKey: "title")
+            ingredient.setValue(textFieldForAmount?.text, forKey: "amount")
+            ingredient.setValue(self.recipeID, forKey: "recipeID")
+            self.saveData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(addAction)
+        present(alertController, animated: true)
+    }
+    func loadData() {
+        let request: NSFetchRequest<Ingredient> = Ingredient.fetchRequest()
+        request.predicate = NSPredicate(format: "recipeID == %@", argumentArray: [recipeID])
+        do {
+            let result = try context?.fetch(request)
+            ingredientsList = result!
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        ingredientTableView.reloadData()
+    }
+    func saveData() {
+        do {
+            try self.context?.save()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        loadData()
+    }
+    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return ingredientsList.count
     }
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
+        let recipe = ingredientsList[indexPath.row]
+        cell.textLabel?.text = recipe.value(forKey: "title") as? String
+        cell.detailTextLabel?.text = recipe.value(forKey: "amount") as? String
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let alert = UIAlertController(title: "Delete!", message: "Are You sure You want to delete?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { _ in                
+                let recipe = self.ingredientsList[indexPath.row]
+                self.context?.delete(recipe)
+                self.saveData()
+                self.loadData()
+            }))
+            self.present(alert, animated: true)
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

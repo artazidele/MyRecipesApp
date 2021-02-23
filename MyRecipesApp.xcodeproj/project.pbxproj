@@ -17,6 +17,10 @@
 		C28E16F225E40E4700806A23 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E16F125E40E4700806A23 /* RecipesTableViewController.swift */; };
 		C28E16F525E40E8600806A23 /* StepsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E16F425E40E8600806A23 /* StepsTableViewController.swift */; };
 		C28E16F825E42A5D00806A23 /* OneRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E16F725E42A5D00806A23 /* OneRecipeViewController.swift */; };
+		C28E16FB25E4FBBB00806A23 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E16FA25E4FBBB00806A23 /* UserViewController.swift */; };
+		C28E16FE25E4FBCA00806A23 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E16FD25E4FBCA00806A23 /* LogInViewController.swift */; };
+		C28E170125E4FBDF00806A23 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E170025E4FBDF00806A23 /* SignUpViewController.swift */; };
+		C28E170425E500BC00806A23 /* OtherUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E170325E500BC00806A23 /* OtherUserTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		C28E16F125E40E4700806A23 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		C28E16F425E40E8600806A23 /* StepsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTableViewController.swift; sourceTree = "<group>"; };
 		C28E16F725E42A5D00806A23 /* OneRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRecipeViewController.swift; sourceTree = "<group>"; };
+		C28E16FA25E4FBBB00806A23 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		C28E16FD25E4FBCA00806A23 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		C28E170025E4FBDF00806A23 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C28E170325E500BC00806A23 /* OtherUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,10 @@
 				C28E16F125E40E4700806A23 /* RecipesTableViewController.swift */,
 				C28E16F425E40E8600806A23 /* StepsTableViewController.swift */,
 				C28E16F725E42A5D00806A23 /* OneRecipeViewController.swift */,
+				C28E16FA25E4FBBB00806A23 /* UserViewController.swift */,
+				C28E16FD25E4FBCA00806A23 /* LogInViewController.swift */,
+				C28E170025E4FBDF00806A23 /* SignUpViewController.swift */,
+				C28E170325E500BC00806A23 /* OtherUserTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,7 +186,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C28E16D125E39B7300806A23 /* AppDelegate.swift in Sources */,
+				C28E16FB25E4FBBB00806A23 /* UserViewController.swift in Sources */,
+				C28E16FE25E4FBCA00806A23 /* LogInViewController.swift in Sources */,
 				C28E16F825E42A5D00806A23 /* OneRecipeViewController.swift in Sources */,
+				C28E170425E500BC00806A23 /* OtherUserTableViewController.swift in Sources */,
+				C28E170125E4FBDF00806A23 /* SignUpViewController.swift in Sources */,
 				C28E16F525E40E8600806A23 /* StepsTableViewController.swift in Sources */,
 				C28E16D325E39B7300806A23 /* SceneDelegate.swift in Sources */,
 				C28E16EE25E40E2000806A23 /* IngredientsTableViewController.swift in Sources */,
