@@ -18,6 +18,7 @@ class OtherUserTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Other User Recipes"
         otherTableView.delegate = self
         otherTableView.dataSource = self
         

@@ -16,8 +16,6 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         helloLabel.text = "Hello, \(usernameString)!"
-
-        // Do any additional setup after loading the view.
     }
     @IBAction func otherRecipesTapped(_ sender: Any) {
         toOtherRecipes()

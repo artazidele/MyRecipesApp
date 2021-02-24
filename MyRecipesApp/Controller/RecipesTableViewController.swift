@@ -18,6 +18,7 @@ class RecipesTableViewController: UITableViewController {
     @IBOutlet weak var recipeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "My Recipes"
         recipeTableView.delegate = self
         recipeTableView.dataSource = self
         

@@ -19,8 +19,7 @@ class OtherStepsTableViewController: UITableViewController {
     @IBOutlet weak var stepTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.title = "\(titleString)"
-        self.title = "\(recipeID)"
+        self.title = titleString
         stepTableView.delegate = self
         stepTableView.dataSource = self
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

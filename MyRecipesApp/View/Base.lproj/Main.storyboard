@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlZ-HV-Z1v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1389.8550724637682" y="-1310.4910714285713"/>
+            <point key="canvasLocation" x="1357" y="-612"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="Lk9-Gx-dNt">
@@ -289,83 +289,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="176" translatesAutoresizingMaskIntoConstraints="NO" id="VrP-7b-cbD">
-                                <rect key="frame" x="94" y="159" width="227" height="504"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Eb-f3-Ga4">
-                                        <rect key="frame" x="0.0" y="0.0" width="227" height="114"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="114" id="2fR-xA-4LB"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="UW8-gf-QRV">
-                                        <rect key="frame" x="0.0" y="290" width="227" height="214"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RN4-U1-iB6" customClass="DesignButton" customModule="MyRecipesApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="227" height="84"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="8Pb-7O-MZm"/>
-                                                    <constraint firstAttribute="height" constant="84" id="fL9-h4-p9T"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
-                                                <state key="normal" title="Other User Recipes">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="otherRecipesTapped:" destination="Acc-wh-6NB" eventType="touchUpInside" id="lZn-fN-NHE"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEP-9y-eTd" customClass="DesignButton" customModule="MyRecipesApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="130" width="227" height="84"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="227" id="ABO-GQ-zv5"/>
-                                                    <constraint firstAttribute="height" constant="84" id="Z6p-hh-9FJ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
-                                                <state key="normal" title="My Recipes">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="myRecipesTapped:" destination="Acc-wh-6NB" eventType="touchUpInside" id="JVW-qT-PCR"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEP-9y-eTd" customClass="DesignButton" customModule="MyRecipesApp" customModuleProvider="target">
+                                <rect key="frame" x="93" y="510" width="227" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="ie0-HZ-288"/>
+                                    <constraint firstAttribute="height" constant="94" id="n8j-gd-98R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <state key="normal" title="My Recipes">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="myRecipesTapped:" destination="Acc-wh-6NB" eventType="touchUpInside" id="JVW-qT-PCR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Eb-f3-Ga4">
+                                <rect key="frame" x="93" y="167" width="227" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="2fR-xA-4LB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RN4-U1-iB6" customClass="DesignButton" customModule="MyRecipesApp" customModuleProvider="target">
+                                <rect key="frame" x="94" y="381" width="227" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="63R-ei-svQ"/>
+                                    <constraint firstAttribute="height" constant="78" id="zIV-EX-MV7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <state key="normal" title="Other User Recipes">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="otherRecipesTapped:" destination="Acc-wh-6NB" eventType="touchUpInside" id="lZn-fN-NHE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Nh-sR-X1Y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VrP-7b-cbD" firstAttribute="top" secondItem="2Nh-sR-X1Y" secondAttribute="top" constant="71" id="Ygr-OK-RQ0"/>
-                            <constraint firstItem="2Nh-sR-X1Y" firstAttribute="trailing" secondItem="VrP-7b-cbD" secondAttribute="trailing" constant="93" id="d40-vd-g6G"/>
-                            <constraint firstItem="VrP-7b-cbD" firstAttribute="leading" secondItem="2Nh-sR-X1Y" secondAttribute="leading" constant="94" id="i33-Ev-8Yl"/>
-                            <constraint firstItem="2Nh-sR-X1Y" firstAttribute="bottom" secondItem="VrP-7b-cbD" secondAttribute="bottom" constant="199" id="vW3-nw-Ms9"/>
+                            <constraint firstItem="2Nh-sR-X1Y" firstAttribute="trailing" secondItem="uEP-9y-eTd" secondAttribute="trailing" constant="94" id="C4E-fv-XTT"/>
+                            <constraint firstItem="2Eb-f3-Ga4" firstAttribute="top" secondItem="2Nh-sR-X1Y" secondAttribute="top" constant="123" id="LfR-5f-6Wy"/>
+                            <constraint firstItem="2Eb-f3-Ga4" firstAttribute="leading" secondItem="2Nh-sR-X1Y" secondAttribute="leading" constant="93" id="Msm-XN-x3D"/>
+                            <constraint firstItem="2Nh-sR-X1Y" firstAttribute="bottom" secondItem="uEP-9y-eTd" secondAttribute="bottom" constant="258" id="Vca-3a-xu2"/>
+                            <constraint firstItem="2Nh-sR-X1Y" firstAttribute="trailing" secondItem="RN4-U1-iB6" secondAttribute="trailing" constant="93" id="dHp-fu-iQM"/>
+                            <constraint firstItem="RN4-U1-iB6" firstAttribute="leading" secondItem="2Nh-sR-X1Y" secondAttribute="leading" constant="94" id="kEY-Bp-8Bm"/>
+                            <constraint firstItem="uEP-9y-eTd" firstAttribute="top" secondItem="RN4-U1-iB6" secondAttribute="bottom" constant="51" id="mOA-rF-EA9"/>
+                            <constraint firstItem="RN4-U1-iB6" firstAttribute="top" secondItem="2Eb-f3-Ga4" secondAttribute="bottom" constant="100" id="miW-bx-TcB"/>
+                            <constraint firstItem="2Nh-sR-X1Y" firstAttribute="trailing" secondItem="2Eb-f3-Ga4" secondAttribute="trailing" constant="94" id="mq4-Nu-Be0"/>
+                            <constraint firstItem="uEP-9y-eTd" firstAttribute="leading" secondItem="2Nh-sR-X1Y" secondAttribute="leading" constant="93" id="pv6-ow-LVl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zAp-ug-3ip">
@@ -426,7 +422,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVz-5j-GEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4028.985507246377" y="-607.36607142857144"/>
+            <point key="canvasLocation" x="3103" y="-612"/>
         </scene>
         <!--Other One View Controller-->
         <scene sceneID="hX9-8z-1aR">
@@ -518,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ckr-F1-6QR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4924.6376811594209" y="-612.05357142857144"/>
+            <point key="canvasLocation" x="4093" y="-612"/>
         </scene>
         <!--Recipes Table View Controller-->
         <scene sceneID="7KE-DB-7QZ">
@@ -587,82 +583,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="frO-xM-PFc">
-                                <rect key="frame" x="84" y="431" width="245" height="226"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmm-YY-Zjx" customClass="DesignButton" customModule="MyRecipesApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="245" height="102"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="3WY-w4-YcV"/>
-                                            <constraint firstAttribute="height" constant="102" id="opY-Lb-Wmz"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
-                                        <state key="normal" title="Ingredients">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="seeIngredients:" destination="aJg-zJ-SXZ" eventType="touchUpInside" id="arm-fx-Fzh"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVc-4x-ece" customClass="DesignButton" customModule="MyRecipesApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="132" width="245" height="94"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="94" id="BBY-Gv-oER"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="gOI-Y1-Z4h"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
-                                        <state key="normal" title="Steps">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="seeSteps:" destination="aJg-zJ-SXZ" eventType="touchUpInside" id="uMN-I8-Edr"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecA-sJ-IPl">
-                                <rect key="frame" x="84" y="201" width="245" height="99"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVc-4x-ece" customClass="DesignButton" customModule="MyRecipesApp" customModuleProvider="target">
+                                <rect key="frame" x="84" y="520" width="245" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="99" id="TGj-gj-hQy"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="amh-gK-j70"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="ZnA-W7-WSk"/>
+                                    <constraint firstAttribute="height" constant="100" id="dzd-ih-Zue"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <state key="normal" title="Steps">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="seeSteps:" destination="aJg-zJ-SXZ" eventType="touchUpInside" id="uMN-I8-Edr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecA-sJ-IPl">
+                                <rect key="frame" x="84" y="157" width="245" height="146"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="YAf-BO-UNE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="f6g-oK-91j"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Arial-ItalicMT" family="Arial" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmm-YY-Zjx" customClass="DesignButton" customModule="MyRecipesApp" customModuleProvider="target">
+                                <rect key="frame" x="85" y="384" width="245" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Sup-Pe-tqL"/>
+                                    <constraint firstAttribute="height" constant="95" id="fsB-Lf-GnK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <state key="normal" title="Ingredients">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="seeIngredients:" destination="aJg-zJ-SXZ" eventType="touchUpInside" id="arm-fx-Fzh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cUf-CE-jt5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cUf-CE-jt5" firstAttribute="bottom" secondItem="frO-xM-PFc" secondAttribute="bottom" constant="205" id="5Fb-v5-BZp"/>
-                            <constraint firstItem="ecA-sJ-IPl" firstAttribute="leading" secondItem="cUf-CE-jt5" secondAttribute="leading" constant="84" id="LlU-qY-DN5"/>
-                            <constraint firstItem="frO-xM-PFc" firstAttribute="top" secondItem="ecA-sJ-IPl" secondAttribute="bottom" constant="131" id="QhG-Ek-h2v"/>
-                            <constraint firstItem="cUf-CE-jt5" firstAttribute="trailing" secondItem="ecA-sJ-IPl" secondAttribute="trailing" constant="85" id="Scz-oK-F1q"/>
-                            <constraint firstItem="frO-xM-PFc" firstAttribute="leading" secondItem="cUf-CE-jt5" secondAttribute="leading" constant="84" id="XpR-TQ-dqn"/>
-                            <constraint firstItem="cUf-CE-jt5" firstAttribute="trailing" secondItem="frO-xM-PFc" secondAttribute="trailing" constant="85" id="aTC-SR-uYu"/>
-                            <constraint firstItem="ecA-sJ-IPl" firstAttribute="top" secondItem="cUf-CE-jt5" secondAttribute="top" constant="113" id="wj3-i2-Q7o"/>
+                            <constraint firstItem="ecA-sJ-IPl" firstAttribute="top" secondItem="cUf-CE-jt5" secondAttribute="top" constant="113" id="3aU-yK-X6T"/>
+                            <constraint firstItem="Qmm-YY-Zjx" firstAttribute="leading" secondItem="cUf-CE-jt5" secondAttribute="leading" constant="85" id="4JU-jN-KQK"/>
+                            <constraint firstItem="ecA-sJ-IPl" firstAttribute="leading" secondItem="cUf-CE-jt5" secondAttribute="leading" constant="84" id="4Wn-LG-bY9"/>
+                            <constraint firstItem="FVc-4x-ece" firstAttribute="top" secondItem="Qmm-YY-Zjx" secondAttribute="bottom" constant="41" id="4zO-tO-aPA"/>
+                            <constraint firstItem="Qmm-YY-Zjx" firstAttribute="top" secondItem="ecA-sJ-IPl" secondAttribute="bottom" constant="81" id="57t-ZW-zyp"/>
+                            <constraint firstItem="cUf-CE-jt5" firstAttribute="trailing" secondItem="Qmm-YY-Zjx" secondAttribute="trailing" constant="84" id="E61-hM-tMk"/>
+                            <constraint firstItem="cUf-CE-jt5" firstAttribute="trailing" secondItem="ecA-sJ-IPl" secondAttribute="trailing" constant="85" id="ECO-kf-hob"/>
+                            <constraint firstItem="cUf-CE-jt5" firstAttribute="bottom" secondItem="FVc-4x-ece" secondAttribute="bottom" constant="242" id="bln-9v-7Sn"/>
+                            <constraint firstItem="cUf-CE-jt5" firstAttribute="trailing" secondItem="FVc-4x-ece" secondAttribute="trailing" constant="85" id="kYg-uq-n1t"/>
+                            <constraint firstItem="FVc-4x-ece" firstAttribute="leading" secondItem="cUf-CE-jt5" secondAttribute="leading" constant="84" id="rUR-7s-mXx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4Sc-zw-qZY">
@@ -674,7 +668,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTR-yx-Ftw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3997.1014492753625" y="77.678571428571431"/>
+            <point key="canvasLocation" x="3102.898550724638" y="77.678571428571431"/>
         </scene>
         <!--Other Steps Table View Controller-->
         <scene sceneID="68c-ou-tEo">
@@ -715,7 +709,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mb-3N-sSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6760.8695652173919" y="-630.13392857142856"/>
+            <point key="canvasLocation" x="5077" y="-612"/>
         </scene>
         <!--Other Ingredients Table View Controller-->
         <scene sceneID="W9d-uG-1Z8">
@@ -763,7 +757,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPr-f6-U0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8672" y="-630"/>
+            <point key="canvasLocation" x="6057" y="-612"/>
         </scene>
         <!--Ingredients Table View Controller-->
         <scene sceneID="169-7s-vD3">
@@ -817,7 +811,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5C-Fs-0Nv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7517.3913043478269" y="77.678571428571431"/>
+            <point key="canvasLocation" x="5077" y="78"/>
         </scene>
         <!--Steps Table View Controller-->
         <scene sceneID="bnv-8i-jqE">
@@ -866,7 +860,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFL-lb-4V6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5753.6231884057979" y="77.678571428571431"/>
+            <point key="canvasLocation" x="4094" y="78"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E1C-Q6-lTc">
@@ -885,150 +879,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sot-ha-4Va" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-296" y="-612"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="J54-9j-fuB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rCp-Q2-jYg" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IHx-Zc-7py">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gWH-zn-Xn8" kind="relationship" relationship="rootViewController" id="VL4-Or-rBT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vz7-jK-2Pn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1318.840579710145" y="77.678571428571431"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="VZa-9m-cJA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HXj-hp-HBb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hH5-0q-eNL">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MCz-o9-HiK" kind="relationship" relationship="rootViewController" id="iU3-yI-9sw"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HW6-xA-YQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4844.927536231884" y="77.678571428571431"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="P4z-da-4Ay">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X30-0Y-MOl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2bV-a3-KOj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PEa-xW-gH0" kind="relationship" relationship="rootViewController" id="HC9-38-dsB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gfg-R9-zKs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6607.2463768115949" y="77.678571428571431"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ERI-bE-TjD">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fj0-AK-2pB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B44-Sy-VzG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0EJ-CH-Mo9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="0Su-Kg-dZ0" kind="relationship" relationship="rootViewController" id="Yke-b9-ha5"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="3117.3913043478265" y="-607.36607142857144"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="VXu-IN-bgC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qBZ-hf-slR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7im-gZ-bGm">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Acc-wh-6NB" kind="relationship" relationship="rootViewController" id="bvs-q6-v6M"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Iy4-Y5-4Vu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1318.840579710145" y="-612.05357142857144"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="sza-AJ-Nae">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zgh-3v-9wN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nlk-WH-3qM" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ds8-cb-D1b">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="SlL-Tc-4qq" kind="relationship" relationship="rootViewController" id="KQL-Q4-3H9"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="5850.7246376811599" y="-630.13392857142856"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="uWb-gQ-5kw">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I5c-oh-wwX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MW2-Kj-YrZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hsG-tz-749">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="aJg-zJ-SXZ" kind="relationship" relationship="rootViewController" id="A9K-vw-XHu"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="3086.9565217391305" y="77.678571428571431"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="heE-25-e0e">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gI2-eL-aC3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ksj-HK-2E9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bOM-Sm-uQw" kind="relationship" relationship="rootViewController" id="7Jb-39-ARI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dbp-Ay-mXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7687" y="-630"/>
         </scene>
     </scenes>
     <designables>
