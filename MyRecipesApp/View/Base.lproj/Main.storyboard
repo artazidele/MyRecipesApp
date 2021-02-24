@@ -659,14 +659,20 @@
                             <constraint firstItem="FVc-4x-ece" firstAttribute="leading" secondItem="cUf-CE-jt5" secondAttribute="leading" constant="84" id="rUR-7s-mXx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4Sc-zw-qZY"/>
+                    <navigationItem key="navigationItem" id="4Sc-zw-qZY">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="nBV-2W-LZu">
+                            <connections>
+                                <action selector="editRecipeTitle:" destination="aJg-zJ-SXZ" id="cJS-kk-icU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="titleLabel" destination="ecA-sJ-IPl" id="5A0-JC-VRn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTR-yx-Ftw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3102.898550724638" y="77.678571428571431"/>
+            <point key="canvasLocation" x="4013.04347826087" y="77.678571428571431"/>
         </scene>
         <!--Other Steps Table View Controller-->
         <scene sceneID="68c-ou-tEo">
@@ -809,7 +815,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5C-Fs-0Nv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5077" y="78"/>
+            <point key="canvasLocation" x="5986.9565217391309" y="77.678571428571431"/>
         </scene>
         <!--Steps Table View Controller-->
         <scene sceneID="bnv-8i-jqE">
@@ -858,7 +864,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFL-lb-4V6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4094" y="78"/>
+            <point key="canvasLocation" x="5002.898550724638" y="77.678571428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E1C-Q6-lTc">
