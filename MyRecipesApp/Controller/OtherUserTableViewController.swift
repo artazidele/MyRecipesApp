@@ -6,84 +6,121 @@
 //
 
 import UIKit
+import CoreData
 
 class OtherUserTableViewController: UITableViewController {
-
+    
+    var userID = Int()
+    var recipesList = [Recipe]()
+    var context: NSManagedObjectContext?
+    
+    @IBOutlet weak var otherTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        otherTableView.delegate = self
+        otherTableView.dataSource = self
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadData()
+    }
+    @IBAction func findRecipe(_ sender: Any) {
+        findWith()
+    }
+    @IBAction func seeAllRecipes(_ sender: Any) {
+        allData()
+    }
+    private func allData(){
+        loadData()
+    }
+    
+    private func findWith(){
+        let alertController = UIAlertController(title: "Find Recipe", message: "Find Recipe", preferredStyle: .alert)
+        alertController.addTextField { (textField: UITextField) in
+            textField.placeholder = "Enter recipe!"
+            textField.autocapitalizationType = .none
+            textField.autocorrectionType = .no
+        }
+        let findAction = UIAlertAction(title: "Find", style: .cancel) { (action: UIAlertAction) in
+            let textFieldForIngredient = alertController.textFields?.first
+            let titleToFind = textFieldForIngredient?.text
+            self.findData(withTitle: titleToFind ?? "")
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(findAction)
+        present(alertController, animated: true)
+    }
+    func findData(withTitle: String) {
+        let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
+        request.predicate = NSPredicate(format: "title CONTAINS %@ && userID != %@", argumentArray: [withTitle, userID])
+        do {
+            let result = try context?.fetch(request)
+            recipesList = result!
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        otherTableView.reloadData()
+    }
+    func loadData() {
+        let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
+        request.predicate = NSPredicate(format: "userID != %@", argumentArray: [userID])
+        do {
+            let result = try context?.fetch(request)
+            recipesList = result!
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        otherTableView.reloadData()
+    }
+    func saveData() {
+        do {
+            try self.context?.save()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        loadData()
+    }
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return recipesList.count
     }
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "otherRecipeCell", for: indexPath)
+        let recipe = recipesList[indexPath.row]
+        cell.textLabel?.text = recipe.value(forKey: "title") as? String
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let alert = UIAlertController(title: "Delete!", message: "Are You sure You want to delete?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { _ in
+                let recipe = self.recipesList[indexPath.row]
+                self.context?.delete(recipe)
+                self.saveData()
+                self.loadData()
+                
+            }))
+            self.present(alert, animated: true)
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let vc = storyboard.instantiateViewController(identifier: "OtherRecipeView") as? OtherOneViewController else { return }
+        
+        vc.titleString = recipesList[indexPath.row].title ?? ""
+        vc.recipeID = indexPath.row
+        
+            
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
-    */
-
 }

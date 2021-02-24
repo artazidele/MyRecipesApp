@@ -21,6 +21,7 @@
 		C28E16FE25E4FBCA00806A23 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E16FD25E4FBCA00806A23 /* LogInViewController.swift */; };
 		C28E170125E4FBDF00806A23 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E170025E4FBDF00806A23 /* SignUpViewController.swift */; };
 		C28E170425E500BC00806A23 /* OtherUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E170325E500BC00806A23 /* OtherUserTableViewController.swift */; };
+		C28E170725E6088700806A23 /* OtherOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E170625E6088700806A23 /* OtherOneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C28E16FD25E4FBCA00806A23 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C28E170025E4FBDF00806A23 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C28E170325E500BC00806A23 /* OtherUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserTableViewController.swift; sourceTree = "<group>"; };
+		C28E170625E6088700806A23 /* OtherOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherOneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				C28E16FD25E4FBCA00806A23 /* LogInViewController.swift */,
 				C28E170025E4FBDF00806A23 /* SignUpViewController.swift */,
 				C28E170325E500BC00806A23 /* OtherUserTableViewController.swift */,
+				C28E170625E6088700806A23 /* OtherOneViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				C28E16F825E42A5D00806A23 /* OneRecipeViewController.swift in Sources */,
 				C28E170425E500BC00806A23 /* OtherUserTableViewController.swift in Sources */,
 				C28E170125E4FBDF00806A23 /* SignUpViewController.swift in Sources */,
+				C28E170725E6088700806A23 /* OtherOneViewController.swift in Sources */,
 				C28E16F525E40E8600806A23 /* StepsTableViewController.swift in Sources */,
 				C28E16D325E39B7300806A23 /* SceneDelegate.swift in Sources */,
 				C28E16EE25E40E2000806A23 /* IngredientsTableViewController.swift in Sources */,

@@ -154,13 +154,13 @@
         <!--Other User Table View Controller-->
         <scene sceneID="o2r-8T-uS4">
             <objects>
-                <tableViewController id="0Su-Kg-dZ0" customClass="OtherUserTableViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="OtherRecipes" id="0Su-Kg-dZ0" customClass="OtherUserTableViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mTY-eS-qKb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EjT-RN-Ign">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="otherRecipeCell" id="EjT-RN-Ign">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EjT-RN-Ign" id="Dof-p0-dC0">
@@ -174,16 +174,32 @@
                             <outlet property="delegate" destination="0Su-Kg-dZ0" id="3ig-HG-H0g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Gvp-O1-qAa"/>
+                    <navigationItem key="navigationItem" id="Gvp-O1-qAa">
+                        <rightBarButtonItems>
+                            <barButtonItem image="magnifyingglass" catalog="system" id="2jt-LK-Laz">
+                                <connections>
+                                    <action selector="findRecipe:" destination="0Su-Kg-dZ0" id="ysl-Sf-Vxx"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="All" id="P2u-oY-qIZ">
+                                <connections>
+                                    <action selector="seeAllRecipes:" destination="0Su-Kg-dZ0" id="xdd-5u-PPe"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="otherTableView" destination="mTY-eS-qKb" id="o8c-fu-PcH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVz-5j-GEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4028.985507246377" y="-607.36607142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Other One View Controller-->
         <scene sceneID="hX9-8z-1aR">
             <objects>
-                <viewController id="pRn-jb-jj8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OtherRecipeView" id="pRn-jb-jj8" customClass="OtherOneViewController" customModule="MyRecipesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3BR-Uv-eX2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

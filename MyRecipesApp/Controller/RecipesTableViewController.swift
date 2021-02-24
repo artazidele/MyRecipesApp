@@ -81,7 +81,7 @@ class RecipesTableViewController: UITableViewController {
     }
     func findData(withTitle: String) {
         let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
-        request.predicate = NSPredicate(format: "title CONTAINS %@ && userID == %@", argumentArray: ["\(withTitle) && \(userID)"])
+        request.predicate = NSPredicate(format: "title CONTAINS %@ && userID == %@", argumentArray: [withTitle, userID])
         do {
             let result = try context?.fetch(request)
             recipesList = result!
