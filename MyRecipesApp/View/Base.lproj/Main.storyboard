@@ -142,7 +142,13 @@
                         <viewLayoutGuide key="safeArea" id="2Nh-sR-X1Y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zAp-ug-3ip"/>
+                    <navigationItem key="navigationItem" id="zAp-ug-3ip">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="rPn-YE-Ias">
+                            <connections>
+                                <action selector="logOutButtonTapped:" destination="Acc-wh-6NB" id="W5p-aE-4XT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="helloLabel" destination="2Eb-f3-Ga4" id="KKF-Sa-Ztx"/>
                     </connections>

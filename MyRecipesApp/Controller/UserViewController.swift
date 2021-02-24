@@ -25,12 +25,19 @@ class UserViewController: UIViewController {
     @IBAction func myRecipesTapped(_ sender: Any) {
         toMyRecipes()
     }
+    
+    @IBAction func logOutButtonTapped(_ sender: Any) {
+        toLogInView()
+    }
     // MARK: - Navigation
     private func toMyRecipes(){
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let vc = storyboard.instantiateViewController(identifier: "MyRecipes") as? RecipesTableViewController else { return }
         vc.userID = userID
         navigationController?.pushViewController(vc, animated: true)
+    }
+    private func toLogInView(){
+        navigationController?.popToRootViewController(animated: false)
     }
     private func toOtherRecipes(){
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

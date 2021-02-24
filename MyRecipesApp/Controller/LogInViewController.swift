@@ -24,6 +24,14 @@ class LogInViewController: UIViewController {
     @IBAction func logInButtonTapped(_ sender: Any) {
         checkUser()
     }
+    private func warningPopUp(withTitle title: String?, withMessage message: String?) {
+        DispatchQueue.main.async {
+            let popUp = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            popUp.addAction(okButton)
+            self.present(popUp, animated: true)
+        }
+    }
     private func checkUser() {
         var userId = Int16()
         let username = usernameTextField.text!
@@ -36,8 +44,10 @@ class LogInViewController: UIViewController {
             userId = user[0].userID
             print(userId)
             let requestPassword = user[0].password
-            if password == requestPassword {
+            if password == requestPassword && username != "" {
                 toUserView(userID: Int(userId))
+            } else {
+                self.warningPopUp(withTitle: "There is an error in username or password!", withMessage: "You have to write correct username and password!")
             }
         } catch {
             fatalError(error.localizedDescription)
@@ -51,6 +61,8 @@ class LogInViewController: UIViewController {
         vc.usernameString = usernameTextField.text ?? ""
         vc.userID = userID
         navigationController?.pushViewController(vc, animated: true)
+        usernameTextField.text = ""
+        passwordTextField.text = ""
     }
 
 
