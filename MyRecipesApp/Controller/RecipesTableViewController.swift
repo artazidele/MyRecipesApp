@@ -44,7 +44,7 @@ class RecipesTableViewController: UITableViewController {
         loadData()
     }
     private func addRecipe() {
-        let alertController = UIAlertController(title: "Add New Recipe", message: "Recipe title", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Add New Recipe", message: "Add New Recipe", preferredStyle: .alert)
         alertController.addTextField { (textField: UITextField) in
             textField.placeholder = "Enter the title of new recipe!"
             textField.autocapitalizationType = .sentences

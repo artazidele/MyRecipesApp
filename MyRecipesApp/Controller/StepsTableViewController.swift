@@ -34,9 +34,9 @@ class StepsTableViewController: UITableViewController {
         addStep()
     }
     private func addStep() {
-        let alertController = UIAlertController(title: "Add New Recipe", message: "Recipe title", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Add New Step", message: "Add New Step", preferredStyle: .alert)
         alertController.addTextField { (textField: UITextField) in
-            textField.placeholder = "Enter the title of new recipe!"
+            textField.placeholder = "Enter the new step!"
             textField.autocapitalizationType = .sentences
             textField.autocorrectionType = .no
         }

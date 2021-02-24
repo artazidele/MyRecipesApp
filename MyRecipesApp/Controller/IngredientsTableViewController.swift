@@ -33,14 +33,14 @@ class IngredientsTableViewController: UITableViewController {
         addIngredient()
     }
     private func addIngredient() {
-        let alertController = UIAlertController(title: "Add New Recipe", message: "Recipe title", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Add New Ingredient", message: "Add New Ingredient and Amount", preferredStyle: .alert)
         alertController.addTextField { (textField: UITextField) in
-            textField.placeholder = "Enter the title of new recipe!"
+            textField.placeholder = "Enter the new ingredient!"
             textField.autocapitalizationType = .sentences
             textField.autocorrectionType = .no
         }
         alertController.addTextField { (textField: UITextField) in
-            textField.placeholder = "Enter the title of new recipe!"
+            textField.placeholder = "Enter the amount of new ingredient!"
             textField.autocapitalizationType = .sentences
             textField.autocorrectionType = .no
         }
