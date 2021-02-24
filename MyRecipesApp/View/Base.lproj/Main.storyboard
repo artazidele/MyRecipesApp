@@ -659,9 +659,7 @@
                             <constraint firstItem="FVc-4x-ece" firstAttribute="leading" secondItem="cUf-CE-jt5" secondAttribute="leading" constant="84" id="rUR-7s-mXx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4Sc-zw-qZY">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="1eD-rV-hrG"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="4Sc-zw-qZY"/>
                     <connections>
                         <outlet property="titleLabel" destination="ecA-sJ-IPl" id="5A0-JC-VRn"/>
                     </connections>

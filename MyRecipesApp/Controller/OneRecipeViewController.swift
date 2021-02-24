@@ -23,17 +23,7 @@ class OneRecipeViewController: UIViewController {
         context = appDelegate.persistentContainer.viewContext
     }
     
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     @IBAction func seeIngredients(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let vc = storyboard.instantiateViewController(identifier: "IngredientsView") as? IngredientsTableViewController else { return }
