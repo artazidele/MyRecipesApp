@@ -11,6 +11,7 @@ import CoreData
 class SignUpViewController: UIViewController {
 
     var usersList = [User]()
+    var usersListToCheck = [User]()
     var context: NSManagedObjectContext?
     
     @IBOutlet weak var usernameField: UITextField!
@@ -37,19 +38,22 @@ class SignUpViewController: UIViewController {
     private func signUp(){
         let userName = usernameField.text!
         let password = passwordFirstField.text!
-        let userID = usersList.count + 1
         let request: NSFetchRequest<User> = User.fetchRequest()
-        request.predicate = NSPredicate(format: "username == %@", argumentArray: [userName])
+        let requestToCheck: NSFetchRequest<User> = User.fetchRequest()
+        requestToCheck.predicate = NSPredicate(format: "username == %@", argumentArray: [userName])
         var exist = false
         do {
             let result = try context?.fetch(request)
             usersList = result!
-            if result != nil {
+            let resultToCheck = try context?.fetch(requestToCheck)
+            usersListToCheck = resultToCheck!
+            if usersListToCheck.count > 0 {
                 exist = true
             }
         } catch {
             fatalError(error.localizedDescription)
         }
+        let userID = usersList.count + 1
         
         if password != passwordSecondField.text {
             self.warningPopUp(withTitle: "Passwords do not match!", withMessage: "You have to write one password in both fields!")
@@ -57,10 +61,10 @@ class SignUpViewController: UIViewController {
             warningPopUp(withTitle: "Username exists!", withMessage: "You have to choose other username!")
         } else {
             let entity = NSEntityDescription.entity(forEntityName: "User", in: self.context!)
-            let recipe = NSManagedObject(entity: entity!, insertInto: self.context)
-            recipe.setValue(userName, forKey: "username")
-            recipe.setValue(password, forKey: "password")
-            recipe.setValue(userID, forKey: "userID")
+            let user = NSManagedObject(entity: entity!, insertInto: self.context)
+            user.setValue(userName, forKey: "username")
+            user.setValue(password, forKey: "password")
+            user.setValue(userID, forKey: "userID")
             self.saveData()
             toLogIn()
         }
