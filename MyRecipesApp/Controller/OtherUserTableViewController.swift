@@ -77,14 +77,6 @@ class OtherUserTableViewController: UITableViewController {
         }
         otherTableView.reloadData()
     }
-    func saveData() {
-        do {
-            try self.context?.save()
-        } catch {
-            fatalError(error.localizedDescription)
-        }
-        loadData()
-    }
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -95,20 +87,6 @@ class OtherUserTableViewController: UITableViewController {
         let recipe = recipesList[indexPath.row]
         cell.textLabel?.text = recipe.value(forKey: "title") as? String
         return cell
-    }
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let alert = UIAlertController(title: "Delete!", message: "Are You sure You want to delete?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { _ in
-                let recipe = self.recipesList[indexPath.row]
-                self.context?.delete(recipe)
-                self.saveData()
-                self.loadData()
-                
-            }))
-            self.present(alert, animated: true)
-        }
     }
     // MARK: - Navigation
     

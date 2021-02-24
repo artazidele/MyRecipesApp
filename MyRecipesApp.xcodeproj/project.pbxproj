@@ -22,6 +22,11 @@
 		C28E170125E4FBDF00806A23 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E170025E4FBDF00806A23 /* SignUpViewController.swift */; };
 		C28E170425E500BC00806A23 /* OtherUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E170325E500BC00806A23 /* OtherUserTableViewController.swift */; };
 		C28E170725E6088700806A23 /* OtherOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E170625E6088700806A23 /* OtherOneViewController.swift */; };
+		C28E170B25E6408900806A23 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E170A25E6408900806A23 /* DesignButton.swift */; };
+		C28E170E25E640A400806A23 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E170D25E640A400806A23 /* DesignTextField.swift */; };
+		C28E171125E640D900806A23 /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E171025E640D900806A23 /* BounceButton.swift */; };
+		C28E171425E6520200806A23 /* OtherStepsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E171325E6520200806A23 /* OtherStepsTableViewController.swift */; };
+		C28E171725E6521800806A23 /* OtherIngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E171625E6521800806A23 /* OtherIngredientsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		C28E170025E4FBDF00806A23 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C28E170325E500BC00806A23 /* OtherUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserTableViewController.swift; sourceTree = "<group>"; };
 		C28E170625E6088700806A23 /* OtherOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherOneViewController.swift; sourceTree = "<group>"; };
+		C28E170A25E6408900806A23 /* DesignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
+		C28E170D25E640A400806A23 /* DesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
+		C28E171025E640D900806A23 /* BounceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
+		C28E171325E6520200806A23 /* OtherStepsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherStepsTableViewController.swift; sourceTree = "<group>"; };
+		C28E171625E6521800806A23 /* OtherIngredientsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherIngredientsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 		C28E16CF25E39B7300806A23 /* MyRecipesApp */ = {
 			isa = PBXGroup;
 			children = (
+				C28E170925E6405D00806A23 /* ExtraResources */,
 				C28E16E825E40CFB00806A23 /* AppDelegate */,
 				C28E16EB25E40D2200806A23 /* Controller */,
 				C28E16EA25E40D0C00806A23 /* View */,
@@ -114,8 +125,20 @@
 				C28E170025E4FBDF00806A23 /* SignUpViewController.swift */,
 				C28E170325E500BC00806A23 /* OtherUserTableViewController.swift */,
 				C28E170625E6088700806A23 /* OtherOneViewController.swift */,
+				C28E171325E6520200806A23 /* OtherStepsTableViewController.swift */,
+				C28E171625E6521800806A23 /* OtherIngredientsTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C28E170925E6405D00806A23 /* ExtraResources */ = {
+			isa = PBXGroup;
+			children = (
+				C28E170A25E6408900806A23 /* DesignButton.swift */,
+				C28E170D25E640A400806A23 /* DesignTextField.swift */,
+				C28E171025E640D900806A23 /* BounceButton.swift */,
+			);
+			path = ExtraResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,14 +212,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C28E16D125E39B7300806A23 /* AppDelegate.swift in Sources */,
+				C28E171725E6521800806A23 /* OtherIngredientsTableViewController.swift in Sources */,
 				C28E16FB25E4FBBB00806A23 /* UserViewController.swift in Sources */,
+				C28E170B25E6408900806A23 /* DesignButton.swift in Sources */,
 				C28E16FE25E4FBCA00806A23 /* LogInViewController.swift in Sources */,
 				C28E16F825E42A5D00806A23 /* OneRecipeViewController.swift in Sources */,
+				C28E170E25E640A400806A23 /* DesignTextField.swift in Sources */,
+				C28E171425E6520200806A23 /* OtherStepsTableViewController.swift in Sources */,
 				C28E170425E500BC00806A23 /* OtherUserTableViewController.swift in Sources */,
 				C28E170125E4FBDF00806A23 /* SignUpViewController.swift in Sources */,
 				C28E170725E6088700806A23 /* OtherOneViewController.swift in Sources */,
 				C28E16F525E40E8600806A23 /* StepsTableViewController.swift in Sources */,
 				C28E16D325E39B7300806A23 /* SceneDelegate.swift in Sources */,
+				C28E171125E640D900806A23 /* BounceButton.swift in Sources */,
 				C28E16EE25E40E2000806A23 /* IngredientsTableViewController.swift in Sources */,
 				C28E16DB25E39B7300806A23 /* MyRecipesApp.xcdatamodeld in Sources */,
 				C28E16F225E40E4700806A23 /* RecipesTableViewController.swift in Sources */,

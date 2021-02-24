@@ -16,14 +16,12 @@ class OtherOneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = titleString
-
-        // Do any additional setup after loading the view.
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
     }
-    @IBAction func seeIngredients(_ sender: Any) {
+    @IBAction func seeIngredientsTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let vc = storyboard.instantiateViewController(identifier: "IngredientsView") as? IngredientsTableViewController else { return }
+        guard let vc = storyboard.instantiateViewController(identifier: "OtherIngredients") as? OtherIngredientsTableViewController else { return }
         
         vc.titleString = titleLabel.text ?? ""
         vc.recipeID = recipeID
@@ -31,9 +29,9 @@ class OtherOneViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
         
     }
-    @IBAction func seeSteps(_ sender: Any) {
+    @IBAction func seeStepsTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let vc = storyboard.instantiateViewController(identifier: "StepsView") as? StepsTableViewController else { return }
+        guard let vc = storyboard.instantiateViewController(identifier: "OtherSteps") as? OtherStepsTableViewController else { return }
         
         vc.titleString = titleLabel.text ?? ""
         vc.recipeID = recipeID
