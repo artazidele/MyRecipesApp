@@ -95,7 +95,7 @@ class OtherUserTableViewController: UITableViewController {
         guard let vc = storyboard.instantiateViewController(identifier: "OtherRecipeView") as? OtherOneViewController else { return }
         
         vc.titleString = recipesList[indexPath.row].title ?? ""
-        vc.recipeID = indexPath.row
+        vc.recipeID = Int(recipesList[indexPath.row].recipeID)
         
             
         navigationController?.pushViewController(vc, animated: true)
