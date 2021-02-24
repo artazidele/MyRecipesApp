@@ -41,13 +41,19 @@ class LogInViewController: UIViewController {
         do {
             let result = try context?.fetch(request)
             user = result!
-            userId = user[0].userID
-            print(userId)
-            let requestPassword = user[0].password
-            if password == requestPassword && username != "" {
-                toUserView(userID: Int(userId))
+            if user.count == 1 {
+                userId = user[0].userID
+                print(userId)
+                let requestPassword = user[0].password
+                if password == requestPassword && username != "" {
+                    toUserView(userID: Int(userId))
+                } else {
+                    self.warningPopUp(withTitle: "The password is not correct!", withMessage: "You have to write correct password!")
+                    passwordTextField.text = ""
+                }
             } else {
-                self.warningPopUp(withTitle: "There is an error in username or password!", withMessage: "You have to write correct username and password!")
+                self.warningPopUp(withTitle: "There is an error in username!", withMessage: "You have to write correct username!")
+                usernameTextField.text = ""
             }
         } catch {
             fatalError(error.localizedDescription)

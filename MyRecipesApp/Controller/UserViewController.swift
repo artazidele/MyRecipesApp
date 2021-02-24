@@ -15,7 +15,7 @@ class UserViewController: UIViewController {
     var usernameString = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-        helloLabel.text = "Hello, \(usernameString)! Your ID is \(userID)."
+        helloLabel.text = "Hello, \(usernameString)!"
 
         // Do any additional setup after loading the view.
     }

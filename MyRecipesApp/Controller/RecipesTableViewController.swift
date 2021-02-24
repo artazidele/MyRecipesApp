@@ -12,6 +12,7 @@ class RecipesTableViewController: UITableViewController {
     
     var userID = Int()
     var recipesList = [Recipe]()
+    var allRecipesList = [Recipe]()
     var context: NSManagedObjectContext?
 
     @IBOutlet weak var recipeTableView: UITableView!
@@ -49,12 +50,21 @@ class RecipesTableViewController: UITableViewController {
             textField.autocapitalizationType = .sentences
             textField.autocorrectionType = .no
         }
+        let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
+        do {
+            let result = try context?.fetch(request)
+            allRecipesList = result!
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        let recipeID = allRecipesList.count
         let addAction = UIAlertAction(title: "Add", style: .cancel) { (action: UIAlertAction) in
             let textFieldForTitle = alertController.textFields?.first
             let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: self.context!)
             let recipe = NSManagedObject(entity: entity!, insertInto: self.context)
             recipe.setValue(textFieldForTitle?.text, forKey: "title")
             recipe.setValue(self.userID, forKey: "userID")
+            recipe.setValue(recipeID, forKey: "recipeID")
             self.saveData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
@@ -139,9 +149,8 @@ class RecipesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let vc = storyboard.instantiateViewController(identifier: "RecipeView") as? OneRecipeViewController else { return }
-        
         vc.titleString = recipesList[indexPath.row].title ?? ""
-        vc.recipeID = indexPath.row
+        vc.recipeID = Int(recipesList[indexPath.row].recipeID)
         
             
         navigationController?.pushViewController(vc, animated: true)

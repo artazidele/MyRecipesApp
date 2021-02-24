@@ -6,6 +6,7 @@
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
+        <attribute name="recipeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
@@ -19,7 +20,7 @@
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="88"/>
         <element name="Ingredient" positionX="-54" positionY="18" width="128" height="88"/>
         <element name="Step" positionX="-36" positionY="36" width="128" height="73"/>
         <element name="User" positionX="-18" positionY="54" width="128" height="88"/>

@@ -57,6 +57,8 @@ class SignUpViewController: UIViewController {
         
         if password != passwordSecondField.text {
             self.warningPopUp(withTitle: "Passwords do not match!", withMessage: "You have to write one password in both fields!")
+        } else if userName == "" || password == ""{
+            self.warningPopUp(withTitle: "You did not write username or password!", withMessage: "You have to write username once and password twice!")
         } else if exist == true {
             warningPopUp(withTitle: "Username exists!", withMessage: "You have to choose other username!")
         } else {
