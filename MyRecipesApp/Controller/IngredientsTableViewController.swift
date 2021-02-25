@@ -92,14 +92,14 @@ class IngredientsTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let alert = UIAlertController(title: "Delete!", message: "Are You sure You want to delete?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            let alert = UIAlertController(title: "Delete!", message: "Are You sure You want to delete?", preferredStyle: .alert)            
             alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { _ in                
                 let recipe = self.ingredientsList[indexPath.row]
                 self.context?.delete(recipe)
                 self.saveData()
                 self.loadData()
             }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }
     }
