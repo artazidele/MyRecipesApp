@@ -137,6 +137,31 @@ class RecipesTableViewController: UITableViewController {
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { _ in
                 let recipe = self.recipesList[indexPath.row]
+                let recipeID = Int(self.recipesList[indexPath.row].recipeID)
+                let request: NSFetchRequest<Step> = Step.fetchRequest()
+                request.predicate = NSPredicate(format: "recipeID == %@", argumentArray: [recipeID])
+                do {
+                    let result = try self.context?.fetch(request)
+                    let stepsList = result!
+                    for step in stepsList {
+                        self.context?.delete(step)
+                        self.saveData()
+                    }
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
+                let requestI: NSFetchRequest<Ingredient> = Ingredient.fetchRequest()
+                requestI.predicate = NSPredicate(format: "recipeID == %@", argumentArray: [recipeID])
+                do {
+                    let resultI = try self.context?.fetch(requestI)
+                    let ingredientsList = resultI!
+                    for ingredient in ingredientsList {
+                        self.context?.delete(ingredient)
+                        self.saveData()
+                    }
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
                 self.context?.delete(recipe)
                 self.saveData()
                 self.loadData()
