@@ -97,6 +97,7 @@ class OtherUserTableViewController: UITableViewController {
         
         vc.titleString = recipesList[indexPath.row].title ?? ""
         vc.recipeID = Int(recipesList[indexPath.row].recipeID)
+        vc.userID = Int(recipesList[indexPath.row].userID)
         
             
         navigationController?.pushViewController(vc, animated: true)
