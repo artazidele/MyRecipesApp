@@ -7,6 +7,7 @@
       "size" : "20x20"
     },
     {
+      "filename" : "icons8-cherry-60.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
@@ -72,6 +73,7 @@
       "size" : "40x40"
     },
     {
+      "filename" : "icons8-cherry-76.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
