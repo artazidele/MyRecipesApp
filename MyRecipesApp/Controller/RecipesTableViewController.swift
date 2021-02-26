@@ -58,7 +58,8 @@ class RecipesTableViewController: UITableViewController {
         } catch {
             fatalError(error.localizedDescription)
         }
-        let recipeID = allRecipesList.count
+        let recipeCount = allRecipesList.count
+        let recipeID = (allRecipesList[recipeCount - 1].recipeID) + 1
         let addAction = UIAlertAction(title: "Add", style: .cancel) { (action: UIAlertAction) in
             let textFieldForTitle = alertController.textFields?.first
             let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: self.context!)
